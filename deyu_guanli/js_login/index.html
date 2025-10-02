@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title> 
+罗定邦中学德育管理
+ </title>
+
+<!-- 上线环境 -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="/deyu_guanli/static/html5shiv.min.js"></script>
+      <script src="/deyu_guanli/static/respond.min.js"></script>
+    <![endif]-->
+          <script src="../static/jquery.min.js"></script>
+    <script src="../static/bootstrap.min.js"></script>
+<!-- 上线环境 -->
+
+
+<!--         &lt;!&ndash;编辑环境&ndash;&gt;-->
+<!--    &lt;!&ndash; Bootstrap &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="/static/bootstrap.min.css">-->
+<!--    &lt;!&ndash; HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 &ndash;&gt;-->
+<!--    &lt;!&ndash; 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 &ndash;&gt;-->
+<!--    &lt;!&ndash;[if lt IE 9]>-->
+<!--      <script src="/static/html5shiv.min.js"></script>-->
+<!--      <script src="/static/respond.min.js"></script>-->
+<!--    <![endif]&ndash;&gt;-->
+<!--          <script src="/static/jquery.min.js"></script>-->
+<!--    <script src="/static/bootstrap.min.js"></script>-->
+<!--        &lt;!&ndash;编辑环境&ndash;&gt;-->
+
+
+
+
+  </head>
+  <style>
+ 
+
+body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #87CEEB, #DDA0DD);
+      overflow: hidden;
+    }
+
+  .login-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+
+  
+</style>
+  <body  onload="initload()">
+  <div class="container">
+    
+           
+
+<div class="login">
+        <h2><strong>罗定邦中学德育管理登录</strong></h2>
+        <div class="login_form">
+    <form method="post" action="index.html" class="form-horizontal" >
+            <span>姓名：</span>
+            <input type="text" placeholder="请输入姓名" maxlength="10" name="js_loginname">
+            <br>
+            <span>密码：</span>
+            <input type="password" placeholder="请输入密码" name="js_loginpassword">
+
+        <div class="btn">
+            <input class="login_btn" type="submit">
+        </div>
+
+  </form>
+  <div><a href="../js_forgetpw/index.html">忘记密码</a></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+ </div>
+  </body>
+<script>
+function initload(){}
+
+  
+
+
+// 创建动态背景的粒子效果
+    const canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    canvas.style.position = 'fixed';
+    canvas.style.top = 0;
+    canvas.style.left = 0;
+    canvas.style.zIndex = -1;
+
+    const ctx = canvas.getContext('2d');
+    const particles = [];
+
+    function Particle(x, y, radius, color) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.color = color;
+      this.vx = Math.random() * 2 - 1;
+      this.vy = Math.random() * 2 - 1;
+    }
+
+    Particle.prototype.draw = function () {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.closePath();
+    };
+
+    Particle.prototype.update = function () {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > canvas.width) {
+        this.vx = -this.vx;
+      }
+
+      if (this.y < 0 || this.y > canvas.height) {
+        this.vy = -this.vy;
+      }
+    };
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      for (let i = 0; i < 100; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const radius = Math.random() * 3 + 1;
+        const color = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.8)`;
+        particles.push(new Particle(x, y, radius, color));
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let particle of particles) {
+        particle.draw();
+        particle.update();
+      }
+    }
+
+    init();
+    animate();
+
+
+
+</script>
+</html>
